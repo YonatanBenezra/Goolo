@@ -58,7 +58,6 @@ picked using our amazing algorithm!
 * React.JS
 * Mobx
 * Sequelize
-* Material-UI
 
 ### Server-side:
 * Node.JS
