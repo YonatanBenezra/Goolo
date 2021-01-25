@@ -9,9 +9,8 @@ With a potential affiliation business model :)
   * [Why was Goolo made and why you should use it](#Why-was-Goolo-made-and-why-you-should-use-it)
   * [Running the project](#running-the-project)
   * [Screenshots](#screenshots)
-    + [Goolo Users](#Goolo-users)
-    + [Goolo Catalog](#Goolo-catalog)
-    + [Goolo Movie](#Goolo-movie)
+    + [Goolo Swiper](#Goolo-Swiper)
+    + [Goolo Recommendations](#Goolo-Recommendations)
   * [Technologies](#technologies)
     + [Client-Side](#client-side)
     + [Server-Side](#server-side)
@@ -44,18 +43,14 @@ With a potential affiliation business model :)
 An interactive swiper, you like it, you swipe it.
 leave the rest to us :)
 
-<p align="center"><img src="./ImgsForReadMe/Swiper-screenshot.png" width="500" /></p>
+<p align="center"><img src="./ImgsForReadMe/Swiper-screenshot.png" width="300" /></p>
 
 
 ### Goolo Recommendations
 Clothes recommended specificialy for you,
 picked using our amazing algorithm!
 
-<p align="center"><img src="./ImgsForReadMe/Goolo-catalog.png" width="500" /></p>
-
-### Goolo In-Action
-See Goolo in action
-<p align="center"><img src="./ImgsForReadMe/Goolo.mp4" width="500" /></p>
+<p align="center"><img src="./ImgsForReadMe/Reccomendations-screenshot.png" width="300" /></p>
 
 ## Technologies:
 
