@@ -44,18 +44,18 @@ With a potential affiliation business model :)
 An interactive swiper, you like it, you swipe it.
 leave the rest to us :)
 
-<p align="center"><img src="ImagesForReadMe/Swiper-screenshot.png" width="500" /></p>
+<p align="center"><img src="./ImgsForReadMe/Swiper-screenshot.png" width="500" /></p>
 
 
 ### Goolo Recommendations
 Clothes recommended specificialy for you,
 picked using our amazing algorithm!
 
-<p align="center"><img src="ImagesForReadMe/Goolo-catalog.png" width="500" /></p>
+<p align="center"><img src="./ImgsForReadMe/Goolo-catalog.png" width="500" /></p>
 
 ### Goolo In-Action
 See Goolo in action
-<p align="center"><img src="ImagesForReadMe/Goolo.mp4" width="500" /></p>
+<p align="center"><img src="./ImgsForReadMe/Goolo.mp4" width="500" /></p>
 
 ## Technologies:
 
