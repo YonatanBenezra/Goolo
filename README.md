@@ -74,5 +74,5 @@ picked using our amazing algorithm!
 
 ## Be a contribute:
 
-<a href="/"></a>
+<a href="/CONTRIBUTION.md">Contribution Readme</a>
 
