@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Goolo 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Goolo is a swiper, which learns what you like and shows you exactly the clothes you like, all in one place and with
+an interactive left/right swipe.
+With a potential affiliation business model :) 
 
-## Available Scripts
+## Table Of Contents
+- [Goolo](#Goolo)
+  * [Why was Goolo made and why you should use it](#Why-was-Goolo-made-and-why-you-should-use-it)
+  * [Running the project](#running-the-project)
+  * [Screenshots](#screenshots)
+    + [Goolo Users](#Goolo-users)
+    + [Goolo Catalog](#Goolo-catalog)
+    + [Goolo Movie](#Goolo-movie)
+  * [Technologies](#technologies)
+    + [Client-Side](#client-side)
+    + [Server-Side](#server-side)
+  * [Whats Next](#whats-next)
+  * [Be a contribute](#be-a-contribute)
+  
+## Why was Goolo made and why you should use it
 
-In the project directory, you can run:
+1. I understood the world of not being able to 
+   choose clothes is not my own concern.
+2. Goolo helps me and I hope others to ease the pain
+   of looking for the right clothes!
+3. Are you a clothing shop?
+   uncustomized buying experience 
+   makes customers to bounce between websites in a chase after clothes they like, which leads to less sales.
+   Feel free to use this open source code!
+## Running the project
 
-### `npm start`
+1. Clone the repo.
+2. Run `npm install`.
+3. enter the server folder.
+4. run `nodemon server.js`.
+5. go back to the root folder.
+6. Run `npm start`.
+7. Navigate to `http://localhost:3000`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Goolo Swiper
+An interactive swiper, you like it, you swipe it.
+leave the rest to us :)
 
-### `npm test`
+<p align="center"><img src="ImagesForReadMe/Swiper-screenshot.png" width="500" /></p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Goolo Recommendations
+Clothes recommended specificialy for you,
+picked using our amazing algorithm!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center"><img src="ImagesForReadMe/Goolo-catalog.png" width="500" /></p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Goolo In-Action
+See Goolo in action
+<p align="center"><img src="ImagesForReadMe/Goolo.mp4" width="500" /></p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies:
 
-### `npm run eject`
+### Client-side:
+* React.JS
+* Mobx
+* Sequelize
+* Material-UI
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Server-side:
+* Node.JS
+* Express
+* SQL
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What's next:
+0. Fixing 3+ likes bug
+1. Adding algorithm for recommended clothings on swiper 
+2. Improving algorithm for recommendations
+3. Adding affiliation to the app (because why not :))
+4. Buy clothes the way its meant to be. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Be a contribute:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<a href="/"></a>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
