@@ -42,6 +42,7 @@ const SignIn = inject('UserStore')(observer(props => {
     try {
       const { data } = await Axios.get(`http://localhost:5000/user/${state.email}/${state.password}`)
       props.UserStore.setUser(data)
+      localStorage.setItem('user', data)
       props.redirectUser()
     } catch (err) {
       console.log(err);

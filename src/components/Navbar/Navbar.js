@@ -7,7 +7,6 @@ import BagIcon from '@material-ui/icons/LocalMall';
 import SwiperIcon from '@material-ui/icons/TouchApp';
 import StarsIcon from '@material-ui/icons/Stars';
 import { Link } from 'react-router-dom'
-import Logo from '../../Logo.jpeg'
 import './Navbar.css'
 const useStyles = makeStyles({
   root: {

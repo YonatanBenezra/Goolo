@@ -30,6 +30,10 @@ class UserStore {
                 this.likedItems = liked.data
                 this.isLoggedIn = true
                 this.state = 'done'
+                localStorage.setItem('userItems', items)
+                localStorage.setItem('likedItems', liked.data)
+                localStorage.setItem('isLoggedIn', true)
+                localStorage.setItem('state', 'done')
             })
         } catch (err) {
             console.log(err)
