@@ -32,9 +32,7 @@ const Swiper = inject('UserStore')(
 		const swiped = async (direction, item) => {
 			const bool = direction === 'right' ? 1 : 0
 			try {
-				await Axios.post(
-					`http://localhost:5000/${bool}/${item.id}/${props.UserStore.user.id}`,
-				)
+				await Axios.post(`/${bool}/${item.id}/${props.UserStore.user.id}`)
 			} catch (err) {
 				console.log('error')
 			}
