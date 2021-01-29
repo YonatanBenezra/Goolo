@@ -53,7 +53,7 @@ const SignIn = inject('UserStore')(
 		const handleSignIn = async () => {
 			try {
 				const { data } = await Axios.get(
-					`http://localhost:5000/user/${state.email}/${state.password}`,
+					`/user/${state.email}/${state.password}`,
 				)
 				props.UserStore.setUser(data)
 				console.log(data)

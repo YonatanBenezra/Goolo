@@ -3,60 +3,27 @@ import Flickity from 'react-flickity-component'
 import './Flickity.css'
 import { observer, inject } from 'mobx-react'
 
-const ShirtsFlickity = inject('UserStore')(
-	observer(props => {
-		const [likeList, setLikeList] = useState(props.UserStore.likedItems ?? [])
-		const [userItems, setUserItems] = useState(props.UserStore.userItems ?? [])
-		const [recommended, setRecommended] = useState([])
-		let recItems = []
-		const itemsToShow = 30
+const ShirtsFlickity = props => {
+	const itemsToShow = 30
 
-		useEffect(() => {
-			initialProcessing()
-		}, [likeList, userItems])
-
-		useEffect(() => {
-			setLikeList(props.UserStore.userItems ?? [])
-			setUserItems(props.UserStore.userItems ?? [])
-		}, [props.UserStore.likedItems, props.UserStore.userItems])
-
-		const initialProcessing = () => {
-			recItems = []
-			for (const liked of likeList) {
-				for (const item of userItems) {
-					if (
-						(liked.brand === item.brand || liked.color === item.color) &&
-						item.type.includes('shirt') &&
-						liked.id !== item.id
-					) {
-						recItems.push(item)
-					}
-				}
-			}
-			setRecommended(recItems)
-		}
-
-		return (
-			<div className="shirtsFlickity">
-				<h1>Recommended Shirts</h1>
-				<Flickity>
-					{recommended.length > 0 &&
-						recommended
-							.splice(
-								0,
-								recommended.length > itemsToShow
-									? itemsToShow
-									: recommended.length,
-							)
-							.map(i => (
-								<a target="_blank" rel="noopener noreferrer" href={i.url}>
-									<img src={i.image} alt={i.id} class="recImg" />
-								</a>
-							))}
-				</Flickity>
-			</div>
-		)
-	}),
-)
+	return (
+		<div className="shirtsFlickity">
+			<h1>Recommended Shirts</h1>
+			<Flickity>
+				{props.data.length > 0 &&
+					props.data
+						.splice(
+							0,
+							props.data.length > itemsToShow ? itemsToShow : props.data.length,
+						)
+						.map(i => (
+							<a target="_blank" rel="noopener noreferrer" href={i.url}>
+								<img src={i.image} alt={i.id} class="recImg" />
+							</a>
+						))}
+			</Flickity>
+		</div>
+	)
+}
 
 export default ShirtsFlickity
