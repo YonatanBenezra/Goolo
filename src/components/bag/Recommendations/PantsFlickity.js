@@ -15,7 +15,7 @@ const PantsFlickity = inject('UserStore')(
 			initialProcessing()
 		}, [likeList, userItems])
 
-		useEffect(() => {
+		useEffect(() => {   
 			setLikeList(props.UserStore.userItems ?? [])
 			setUserItems(props.UserStore.userItems ?? [])
 		}, [props.UserStore.likedItems, props.UserStore.userItems])
