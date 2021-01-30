@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import { action, makeObservable, observable, runInAction } from 'mobx'
+import { BASE_URL } from '../config'
 class UserStore {
 	isLoggedIn = false
 	user = {}
@@ -22,9 +23,11 @@ class UserStore {
 		this.user = user
 		this.state = 'pending'
 		try {
-			const { data } = await Axios.get(`/${this.user.id}/userItems`)
+			const { data } = await Axios.get(`${BASE_URL}/${this.user.id}/userItems`)
 			const items = await data
-			const liked = await Axios.get(`/${this.user.id}/userLikedItems`)
+			const liked = await Axios.get(
+				`${BASE_URL}/${this.user.id}/userLikedItems`,
+			)
 			runInAction(() => {
 				this.userItems = items
 				this.likedItems = liked.data

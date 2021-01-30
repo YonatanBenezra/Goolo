@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Flickity from 'react-flickity-component'
 import './Flickity.css'
-import { observer, inject } from 'mobx-react'
 
 const ShirtsFlickity = props => {
 	const itemsToShow = 30

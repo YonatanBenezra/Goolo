@@ -3,6 +3,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import TinderCard from 'react-tinder-card'
 import './Swiper.css'
 import { observer, inject } from 'mobx-react'
+import { BASE_URL } from '../../config'
 import Axios from 'axios'
 
 const Swiper = inject('UserStore')(
@@ -32,7 +33,9 @@ const Swiper = inject('UserStore')(
 		const swiped = async (direction, item) => {
 			const bool = direction === 'right' ? 1 : 0
 			try {
-				await Axios.post(`/${bool}/${item.id}/${props.UserStore.user.id}`)
+				await Axios.post(
+					`${BASE_URL}/${bool}/${item.id}/${props.UserStore.user.id}`,
+				)
 			} catch (err) {
 				console.log('error')
 			}
