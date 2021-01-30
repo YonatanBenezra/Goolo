@@ -65,9 +65,9 @@ picked using our amazing algorithm!
 * SQL
 
 ## What's next:
-0. Fixing 3+ likes bug
-1. Adding algorithm for recommended clothings on swiper 
-2. Improving algorithm for recommendations
+1. improve swiper page by sending new clothes every 30 swipes.
+2. Improve algorithm for recommendations
+3. add more parameters for recommendation. 
 3. Adding affiliation to the app (because why not :))
 4. Buy clothes the way its meant to be. 
 
