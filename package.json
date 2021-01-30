@@ -25,6 +25,7 @@
 		"react-modal": "^3.11.2",
 		"react-native": "^0.63.3",
 		"react-native-elements": "^3.0.0-alpha.1",
+		"react-on-images-loaded": "^2.2.5",
 		"react-responsive-carousel": "^3.2.10",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.0",

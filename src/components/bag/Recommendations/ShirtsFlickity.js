@@ -3,7 +3,7 @@ import Flickity from 'react-flickity-component'
 import './Flickity.css'
 
 const ShirtsFlickity = props => {
-	const itemsToShow = 30
+	const itemsToShow = 50
 
 	return (
 		<div className="shirtsFlickity">
@@ -12,7 +12,7 @@ const ShirtsFlickity = props => {
 				{props.data.length > 0 &&
 					props.data
 						.splice(
-							0,
+							Math.floor(Math.random() * props.data.length),
 							props.data.length > itemsToShow ? itemsToShow : props.data.length,
 						)
 						.map(i => (

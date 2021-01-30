@@ -57,9 +57,29 @@ const Swiper = inject('UserStore')(
 				<CircularProgress color="secondary" />
 			</div>
 		) : (
-			<>
-				<div className="cardContainer">
-					<h1>Goolo</h1>
+				<div className="swiperContainer">
+					<div className="cardContainer">
+						<h1>Goolo</h1>
+						<div className="swipeContainer">
+							{characters &&
+								characters.length > 0 &&
+								characters.map((character, index) => (
+									<TinderCard
+										className="swipe"
+										key={character.id}
+										onSwipe={dir => swiped(dir, character)}
+										onCardLeftScreen={() => outOfFrame(index)}
+									>
+										<div
+											style={{ backgroundImage: `url(' ${character.image} ')` }}
+											className="card"
+										></div>
+										{/* <h1>{character.type}</h1> */}
+									</TinderCard>
+								))}
+							{alert && <h1>We got alot of your data, go see our recommendations!</h1>}
+						</div>
+					</div>
 					<p
 						style={{ cursor: 'pointer' }}
 						onClick={() => {
@@ -67,30 +87,10 @@ const Swiper = inject('UserStore')(
 							window.location = '/'
 						}}
 					>
-						Logout
+					Logout
 					</p>
-					<div className="swipeContainer">
-						{characters &&
-							characters.length > 0 &&
-							characters.map((character, index) => (
-								<TinderCard
-									className="swipe"
-									key={character.id}
-									onSwipe={dir => swiped(dir, character)}
-									onCardLeftScreen={() => outOfFrame(index)}
-								>
-									<div
-										style={{ backgroundImage: `url(' ${character.image} ')` }}
-										className="card"
-									></div>
-									{/* <h1>{character.type}</h1> */}
-								</TinderCard>
-							))}
-						{alert && <h1>No cards Left</h1>}
-					</div>
 				</div>
-			</>
-		)
+			)
 	}),
 )
 

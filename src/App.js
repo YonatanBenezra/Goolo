@@ -10,6 +10,7 @@ import Home from './components/landing/Home'
 import Swiper from './components/swiper/Swiper'
 import BagRecommendations from './components/bag/Recommendations/BagRecommendations'
 import SimpleBottomNavigation from './components/Navbar/Navbar'
+<BagRecommendations.screen name="Recommendations" component={BagRecommendations} options={{gestureEnabled: false}} />
 const App = inject('UserStore')(
 	observer(props => {
 		return (

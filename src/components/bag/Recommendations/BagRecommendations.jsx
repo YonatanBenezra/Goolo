@@ -67,7 +67,7 @@ const BagRecommendations = inject('UserStore')(
 				<CircularProgress color="secondary" />
 			</div>
 		) : (
-			<div>
+			<div className="recommendationsContainer">
 				<PantsFlickity data={recommendedPants} />
 				<ShirtsFlickity data={recommendedShirts} />
 			</div>
