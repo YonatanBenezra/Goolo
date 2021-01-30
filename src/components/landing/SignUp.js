@@ -12,6 +12,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import { observer, inject } from 'mobx-react'
 import Alert from '@material-ui/lab/Alert'
+import { BASE_URL } from '../../config'
 import Axios from 'axios'
 const useStyles = makeStyles(theme => ({
 	paper: {
@@ -52,7 +53,7 @@ const SignUp = inject('UserStore')(
 
 		const handleSignUp = async () => {
 			try {
-				const { data, status } = await Axios.post('/user', state)
+				const { data, status } = await Axios.post(`${BASE_URL}/user`, state)
 				if (status === 200) {
 					props.UserStore.setUser(data)
 					props.redirectUser()

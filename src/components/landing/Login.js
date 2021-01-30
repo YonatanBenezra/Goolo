@@ -14,6 +14,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import Alert from '@material-ui/lab/Alert'
 import { observer, inject } from 'mobx-react'
+import { BASE_URL } from '../../config'
 import Axios from 'axios'
 const useStyles = makeStyles(theme => ({
 	paper: {
@@ -53,7 +54,7 @@ const SignIn = inject('UserStore')(
 		const handleSignIn = async () => {
 			try {
 				const { data } = await Axios.get(
-					`/user/${state.email}/${state.password}`,
+					`${BASE_URL}/user/${state.email}/${state.password}`,
 				)
 				props.UserStore.setUser(data)
 				console.log(data)
