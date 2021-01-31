@@ -39,13 +39,14 @@ const BagRecommendations = inject('UserStore')(
 			for (const liked of likeList) {
 				for (const item of userItems) {
 					if (
-						(liked.brand === item.brand || liked.color === item.color) &&
-						liked.id !== item.id
-					) {
-						if (item.type.includes('shirt')) {
-							recItemsShirts.push(item)
-						} else if (item.type.includes('pants')) {
+						(liked.brand === item.brand && liked.color === item.color) &&
+						(liked.id !== item.id)
+						) {
+						if (item.type.includes('pants') || item.type.includes('short') || item.type.includes('jeans')) {
+							if(recItemsPants.some(pants => pants.name === item.name))
 							recItemsPants.push(item)
+						} else if (item.type.includes('shirt')) {
+							recItemsShirts.push(item)
 						}
 					}
 				}
