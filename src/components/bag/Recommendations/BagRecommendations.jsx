@@ -39,14 +39,20 @@ const BagRecommendations = inject('UserStore')(
 			for (const liked of likeList) {
 				for (const item of userItems) {
 					if (
-						(liked.brand === item.brand && liked.color === item.color) &&
-						(liked.id !== item.id)
+						liked.brand === item.brand &&
+						liked.color === item.color &&
+						liked.id !== item.id
+					) {
+						if (
+							item.type.includes('pants') ||
+							item.type.includes('short') ||
+							item.type.includes('jeans')
 						) {
-						if (item.type.includes('pants') || item.type.includes('short') || item.type.includes('jeans')) {
-							if(recItemsPants.some(pants => pants.name === item.name))
-							recItemsPants.push(item)
+							if (recItemsPants.findIndex(rec => rec.id === item.id) === -1)
+								recItemsPants.push(item)
 						} else if (item.type.includes('shirt')) {
-							recItemsShirts.push(item)
+							if (recItemsShirts.findIndex(rec => rec.id === item.id) === -1)
+								recItemsShirts.push(item)
 						}
 					}
 				}
@@ -55,7 +61,13 @@ const BagRecommendations = inject('UserStore')(
 			setRecommendedShirts(recItemsShirts)
 			setIsLoading(false)
 		}
-
+		const shuffle = a => {
+			for (let i = a.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1))
+				;[a[i], a[j]] = [a[j], a[i]]
+			}
+			return a
+		}
 		return isLoading ? (
 			<div
 				style={{
@@ -69,8 +81,8 @@ const BagRecommendations = inject('UserStore')(
 			</div>
 		) : (
 			<div className="recommendationsContainer">
-				<PantsFlickity data={recommendedPants} />
-				<ShirtsFlickity data={recommendedShirts} />
+				<PantsFlickity data={recommendedPants} shuffle={shuffle} />
+				<ShirtsFlickity data={recommendedShirts} shuffle={shuffle} />
 			</div>
 		)
 	}),

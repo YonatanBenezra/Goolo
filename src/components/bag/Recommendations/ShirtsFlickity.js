@@ -10,11 +10,9 @@ const ShirtsFlickity = props => {
 			<h1>Recommended Shirts</h1>
 			<Flickity>
 				{props.data.length > 0 &&
-					props.data
-						.splice(
-							Math.floor(Math.random() * props.data.length),
-							props.data.length > itemsToShow ? itemsToShow : props.data.length,
-						)
+					props
+						.shuffle(props.data)
+						.filter((item, idx) => idx < itemsToShow)
 						.map(i => (
 							<a target="_blank" rel="noopener noreferrer" href={i.url}>
 								<img src={i.image} alt={i.id} class="recImg" />
