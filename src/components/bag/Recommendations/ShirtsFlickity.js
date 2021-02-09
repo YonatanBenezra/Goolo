@@ -7,7 +7,7 @@ const ShirtsFlickity = props => {
 
 	return (
 		<div className="shirtsFlickity">
-			<h1>Recommended Shirts</h1>
+			<h1>Shirts</h1>
 			<Flickity>
 				{props.data.length > 0 &&
 					props

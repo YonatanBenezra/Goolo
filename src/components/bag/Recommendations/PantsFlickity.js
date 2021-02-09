@@ -6,7 +6,7 @@ const ShirtsFlickity = props => {
 	const itemsToShow = 50
 	return (
 		<div className="shirtsFlickity">
-			<h1>Recommended Pants</h1>
+			<h1>Pants</h1>
 			<Flickity>
 				{props.data.length > 0 &&
 					props

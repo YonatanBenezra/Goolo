@@ -8,7 +8,7 @@ import Axios from 'axios'
 
 const Swiper = inject('UserStore')(
 	observer(props => {
-		const cardsToshow = 40
+		const cardsToshow = 30
 		const [isLoading, setIsLoading] = useState(true)
 		const [characters, setCharacters] = useState([])
 		const [alert, setAlert] = useState(false)
@@ -81,6 +81,7 @@ const Swiper = inject('UserStore')(
 						</div>
 					</div>
 					<p
+						className="logoutBtn"
 						style={{ cursor: 'pointer' }}
 						onClick={() => {
 							localStorage.clear()

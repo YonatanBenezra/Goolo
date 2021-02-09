@@ -127,3 +127,6 @@ h2 {
   background: rgb(52,9,121);
 background: linear-gradient(90deg, rgba(52,9,121,1) 13%, rgba(0,212,255,1) 82%);
 }
+.logoutBtn {
+  padding-top: 5rem;
+}
