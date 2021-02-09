@@ -8,7 +8,7 @@ import Axios from 'axios'
 
 const Swiper = inject('UserStore')(
 	observer(props => {
-		const cardsToshow = 30
+		const cardsToshow = 100
 		const [isLoading, setIsLoading] = useState(true)
 		const [characters, setCharacters] = useState([])
 		const [alert, setAlert] = useState(false)
@@ -73,7 +73,9 @@ const Swiper = inject('UserStore')(
 										<div
 											style={{ backgroundImage: `url(' ${character.image} ')` }}
 											className="card"
-										></div>
+										>
+											<p className="type-text">{character.type}</p>
+										</div>
 										{/* <h1>{character.type}</h1> */}
 									</TinderCard>
 								))}
@@ -81,7 +83,7 @@ const Swiper = inject('UserStore')(
 						</div>
 					</div>
 					<p
-						className="logoutBtn"
+						className="logout-text"
 						style={{ cursor: 'pointer' }}
 						onClick={() => {
 							localStorage.clear()

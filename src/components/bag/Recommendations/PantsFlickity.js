@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Flickity from 'react-flickity-component'
 import './Flickity.css'
+import SwiperIcon from '@material-ui/icons/ArrowRightAltTwoTone';
 
 const ShirtsFlickity = props => {
-	const itemsToShow = 50
+	const itemsToShow = 30
 	return (
 		<div className="shirtsFlickity">
-			<h1>Pants</h1>
+			<h1>Recommended Pants</h1>
 			<Flickity>
 				{props.data.length > 0 &&
 					props

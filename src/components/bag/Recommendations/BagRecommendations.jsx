@@ -3,19 +3,16 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { observer, inject } from 'mobx-react'
 import PantsFlickity from './PantsFlickity'
 import ShirtsFlickity from './ShirtsFlickity'
-import ShoesFlickity from './ShoesFlickity'
 
 const BagRecommendations = inject('UserStore')(
 	observer(props => {
 		const [isLoading, setIsLoading] = useState(true)
 		const [recommendedPants, setRecommendedPants] = useState([])
 		const [recommendedShirts, setRecommendedShirts] = useState([])
-		const [recommendedShoes, setRecommendedShoes] = useState([])
 		const [likeList, setLikeList] = useState(props.UserStore.likedItems ?? [])
 		const [userItems, setUserItems] = useState(props.UserStore.userItems ?? [])
 		let recItemsShirts = []
 		let recItemsPants = []
-		let recItemsShoes = []
 
 		useEffect(() => {
 			if (localStorage.getItem('user')) {
@@ -39,41 +36,42 @@ const BagRecommendations = inject('UserStore')(
 			setIsLoading(true)
 			recItemsShirts = []
 			recItemsPants = []
-			recItemsShoes = []
 			for (const liked of likeList) {
 				for (const item of userItems) {
 					if (
 						liked.brand === item.brand &&
 						liked.color === item.color &&
-						liked.id !== item.id
+						liked.url !== item.url
 					) {
 						if (
 							item.type.includes('pants') ||
 							item.type.includes('short') ||
-							item.type.includes('jeans')
+							item.type.includes('skirt') ||
+							item.type.includes('jeans') ||
+							item.type.includes('tight') ||
+							item.type.includes('legging') ||
+							item.type.includes('trouser') ||
+							item.type.includes('jogger') ||
+							item.type.includes('chino')
 						) {
-							if (recItemsPants.findIndex(rec => rec.id === item.id) === -1)
+							if (recItemsPants.findIndex(rec => rec.url === item.url) === -1)
 								recItemsPants.push(item)
-						} else if (
-							item.type.includes('shirt') ||
-							item.type.includes('top')
-						) {
-							if (recItemsShirts.findIndex(rec => rec.id === item.id) === -1)
+							}else if (
+								item.type.includes('shirt') ||
+								item.type.includes('blazer') ||
+								item.type.includes('hoodie') ||
+								item.type.includes('suit') ||
+								item.type.includes('vest') ||
+								item.type.includes('dress')
+								) {
+							if (recItemsShirts.findIndex(rec => rec.url === item.url) === -1)
 								recItemsShirts.push(item)
-						} else if (
-							item.type.includes('shoe') ||
-							item.type.includes('boot') ||
-							item.type.includes('heel')
-						) {
-							if (recItemsShoes.findIndex(rec => rec.id === item.id) === -1)
-								recItemsShoes.push(item)
 						}
 					}
 				}
 			}
 			setRecommendedPants(recItemsPants)
 			setRecommendedShirts(recItemsShirts)
-			setRecommendedShoes(recItemsShoes)
 			setIsLoading(false)
 		}
 		const shuffle = a => {
@@ -85,12 +83,12 @@ const BagRecommendations = inject('UserStore')(
 		}
 		return isLoading ? (
 			<div
-				style={{
-					width: '100vw',
-					height: '100vh',
-					display: 'grid',
-					placeItems: 'center',
-				}}
+			style={{
+				width: '100vw',
+				height: '100vh',
+				display: 'grid',
+				placeItems: 'center',
+			}}
 			>
 				<CircularProgress color="secondary" />
 			</div>
@@ -98,7 +96,6 @@ const BagRecommendations = inject('UserStore')(
 			<div className="recommendationsContainer">
 				<PantsFlickity data={recommendedPants} shuffle={shuffle} />
 				<ShirtsFlickity data={recommendedShirts} shuffle={shuffle} />
-				<ShoesFlickity data={recommendedShoes} shuffle={shuffle} />
 			</div>
 		)
 	}),

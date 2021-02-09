@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Flickity from 'react-flickity-component'
 import './Flickity.css'
 
@@ -7,7 +7,7 @@ const ShirtsFlickity = props => {
 
 	return (
 		<div className="shirtsFlickity">
-			<h1>Shirts</h1>
+			<h1>Recommended Shirts</h1>
 			<Flickity>
 				{props.data.length > 0 &&
 					props
